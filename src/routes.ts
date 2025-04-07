@@ -5,6 +5,7 @@ import { coursesController } from './@controller/coursesController'
 import { episodesController } from './@controller/episodesController'
 import { favoritesController } from './@controller/favoritesController'
 import { likesController } from './@controller/likesController'
+import { usersController } from './@controller/usersController'
 import { ensureAuth, ensureAuthViaQuery } from './@middlewares/auth'
 import { episodeService } from './@services/episodeService'
 
@@ -32,5 +33,10 @@ router.delete('/favorites/:id', ensureAuth, favoritesController.delete)
 
 router.post('/likes', ensureAuth, likesController.save)
 router.delete('/likes/:id', ensureAuth, likesController.delete)
+
+router.get('/users/current', ensureAuth, usersController.show)
+router.put('/users/current', ensureAuth, usersController.update)
+router.put('/users/current/password', ensureAuth, usersController.updatePassword)
+router.get('/users/current/watching', ensureAuth, usersController.watching)
 
 export { router }

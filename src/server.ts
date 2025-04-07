@@ -1,14 +1,16 @@
+import cors from 'cors'
 import dotnev from 'dotenv'
 import express from 'express'
 import { adminJs, adminJsRouter } from './adminjs'
 import { sequelize } from './database'
 import { router } from './routes'
 
+dotnev.config()
+export const PORT = process.env.PORT || 3000
+
 const app = express()
 
-dotnev.config()
-
-export const PORT = process.env.PORT || 3000
+app.use(cors())
 
 app.use(express.static('public'))
 
