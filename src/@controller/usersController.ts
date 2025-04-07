@@ -16,6 +16,22 @@ export const usersController = {
     }
   },
 
+  update: async (req: AuthenticatedRequest, res: Response) => {
+    // biome-ignore lint/style/noNonNullAssertion: <explanation>
+    const { id } = req.user!
+    const { firstName, lastName, phone, birth, email } = req.body
+
+    try {
+      const updatedUser = await userService.update(id, { firstName, lastName, phone, birth, email })
+
+      return res.json(updatedUser)
+    } catch (error) {
+      if (error instanceof Error) {
+        return res.status(400).json({ message: error.message })
+      }
+    }
+  },
+
   watching: async (req: AuthenticatedRequest, res: Response) => {
     // biome-ignore lint/style/noNonNullAssertion: <explanation>
     const { id } = req.user!
