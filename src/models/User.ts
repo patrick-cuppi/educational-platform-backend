@@ -78,11 +78,12 @@ export const User = sequelize.define<UserInstance, User>(
     },
   }
 )
-
+// @ts-ignore
 User.prototype.checkPassword = async function (
   password: string,
   callbackfn: CheckPasswordCallback
 ) {
+  // @ts-ignore
   bcrypt.compare(password, this.password, (error, isSame) => {
     if (error) {
       callbackfn(error)
