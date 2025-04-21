@@ -65,13 +65,21 @@ services:
 
 ## Setup do Projeto
 
-1. Clone o repositório:
+1. Clone o repositório - backend:
 ```bash
 git clone https://github.com/patrick-cuppi/educational-platform-backend
 cd educational-platform-backend
+npm install
 ```
 
-2. Execute o comando para rodar a aplicação:
+2. Clone o repositório - frontend:
+```bash
+git clone https://github.com/patrick-cuppi/educational-platform-frontend
+cd educational-platform-frontend
+npm install
+```
+
+3. Execute o comando para rodar a aplicação backend:
 ```bash
 npm run dev
 ```
@@ -93,7 +101,12 @@ docker ps
 ```
 > ⚠️ Qualquer dúvida que você possua em relação a containers e Docker, recomendo ler a [documentação](https://docs.docker.com/) deles. 
 
-O backend estará disponível em `http://localhost:3000`.
+5. Execute o comando para rodar a aplicação frontend:
+```bash
+npm run dev
+```
+O backend estará disponível em `http://localhost:3030`.
+O frontend estará disponível em `http://localhost:3000` e integrado ao backend.
 
 ## Funcionalidades
 

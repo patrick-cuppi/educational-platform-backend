@@ -6,7 +6,7 @@ import { sequelize } from './database'
 import { router } from './routes'
 
 dotnev.config()
-export const PORT = process.env.PORT || 3000
+export const PORT = process.env.PORT || 3030
 
 const app = express()
 
