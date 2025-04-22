@@ -1,0 +1,596 @@
+{
+	"info": {
+		"_postman_id": "727b5485-7afd-45bf-a28d-df04e577e3fe",
+		"name": "OneBitFlix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23675710"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/categories?page=2&perPage=2&token={{adminToken}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "perPage",
+									"value": "2"
+								},
+								{
+									"key": "token",
+									"value": "{{adminToken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Courses of a specific category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/categories/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"categories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "the category id"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "The details of a course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/courses/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"courses",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/courses/featured",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"courses",
+								"featured"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Releases",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/courses/releases",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"courses",
+								"releases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/courses/search?name=Node&page=2&perPage=4",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"courses",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Node",
+									"description": "The term to search for"
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"description": "The page number"
+								},
+								{
+									"key": "perPage",
+									"value": "4",
+									"description": "The amount of records per page"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top 10 courses by likes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/courses/popular",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"courses",
+								"popular"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Episodes",
+			"item": [
+				{
+					"name": "Stream of some episode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/episodes/stream?videoUrl",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"episodes",
+								"stream"
+							],
+							"query": [
+								{
+									"key": "videoUrl",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Progress of episode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/episodes/:id/watchTime",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"episodes",
+								":id",
+								"watchTime"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Define progress of episode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/episodes/:id/watchTime",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"episodes",
+								":id",
+								"watchTime"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Anakin\",\r\n    \"lastName\": \"Skywalker\",\r\n    \"email\": \"anakinskywalker@jedi.com\",\r\n    \"password\": \"darth123\",\r\n    \"phone\": \"11988001213\",\r\n    \"birth\": \"01-01-2000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@email.com\",\r\n    \"password\": \"1vwre58gv1we6581a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorites (My List)",
+			"item": [
+				{
+					"name": "Get Favorites",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/favorites",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Favorites Courses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/favorites",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/favorites/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"favorites",
+								":id"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Likes",
+			"item": [
+				{
+					"name": "Like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": 11\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/likes",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"likes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Like",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/likes/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"likes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Details of the user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/users/current",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"current"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List of \"keep watching\"",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/users/current/watching",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"current",
+								"watching"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update data of the user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/users/current",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"current"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/users/current/password",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"current",
+								"password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{adminToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "adminToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

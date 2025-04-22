@@ -108,6 +108,11 @@ npm run dev
 O backend estará disponível em `http://localhost:3030`.
 O frontend estará disponível em `http://localhost:3000` e integrado ao backend.
 
+Para facilitar os testes, deixei um arquivo na raiz do projeto com toda a collection de rotas e parâmetros para usar no **Postman**.
+Este é o arquivo: [OneBitFlix.postman_collection.json](/OneBitFlix.postman_collection.json).
+Nessa collection existem duas variáveis globais: **{{baseURL}}** que é a raiz do projeto (http://localhost:3030) e **{{adminToken}}** que é o JWT do admin.
+Você pode configurar uma outra variável de Token para o usuário.
+
 ## Funcionalidades
 
 ### Autenticação
